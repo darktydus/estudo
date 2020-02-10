@@ -8,14 +8,13 @@ import
 
 export default function App() {
   return (
-    <View style={{padding: 30}}>
-      <View>
+    <View style={{padding: 30, backgroundColor: "gray"}}>
+      <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+       
         <TextInput 
         placeholder= "Estabelecimento X"
-        style={{ borderColor: 'black',
-        borderWidth: 1} 
-        }
-        />
+        style={{width:"80%", borderColor: 'black', borderWidth: 2, padding: 10}}/>
+
         <Button title= "ADD" />
       </View>
     </View>
@@ -30,3 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+//Tutorial justifyContent - https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content 
+//Tutorial flexDirection - https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+//Tutorial alignItens - https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
