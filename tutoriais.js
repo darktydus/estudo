@@ -10,3 +10,6 @@
 //caso tenha 3 itens, e adicione flex: 1, para um deles, ele irá utilizar 1/1 (um inteiro) do espaço
 //disponível/possível para ele. Caso adicione flex: 1 para um segundo, será agora 1/2, ou seja o flexbox
 //será dividido, e assim sucessivalmente 1/3 /, 1/4
+
+//constantes + stylesheet facilitam o compartilhamento e a reutilização de estilos,
+//o que possivelmente nos renderá otimizações futuras de desempenho, e o código fica mais limpo.
