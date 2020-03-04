@@ -27,3 +27,7 @@ elementos do array e, em seguida adicioná-los aqui, podendo adicinar também no
 Keys...
 
 ScrollView: serve para rolar a página quando os items utrapaçam a linha da tela(geralmente de cima pra baixo)
+
+Flatlist permite que apenas renderise os itens que aparece na tela, para não renderizar todos e deixar seu app mais lento.
+Flatlist tem 2 propriedades importantes: uma delas eh a "data" que aponta seus dados de entrada, ou seja uma Matrix.
+"renderItem" é a outra proprierade importante, é o item de renderização que usa a função que é chamada para cada item em seu "data"
