@@ -6,7 +6,8 @@ import
   Text, 
   View, 
   TextInput, 
-  Button } from 'react-native';
+  Button,
+  ScrollView } from 'react-native';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
@@ -22,6 +23,7 @@ export default function App() {
 
 
   return (
+    <ScrollView>
     <View style={styles.screen}>
       <View style={styles.inputContainer}>
         <TextInput 
@@ -32,13 +34,16 @@ export default function App() {
         /> 
         <Button title= "ADD" onPress={addGoalHandler}/>  
       </View>
+      <ScrollView>
       <View>
         {courseGoals.map((goal) => 
         <View style={styles.listItem}>
           <Text key={goal}>{goal}</Text>
           </View>)}
       </View> 
+      </ScrollView>
     </View>
+    </ScrollView>
   );
 }
 
