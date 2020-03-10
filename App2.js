@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import GoalItem from "./components/GoalItem";
-import GoalInput from ".components/GoalInput";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
@@ -22,14 +22,13 @@ export default function App() {
     ]);
   };
 
-  //onAddGoalHandler recebe uma prop dentro GoalInput, então colocamos no GoalInput props.onAddGoal
   return (
     <View style={styles.screen}>
       <GoalInput onAddGoal={addGoalHandler} />
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={courseGoals}
-        renderItem={itemData => <GoalItem title={itemData.item.value} />} //itemData(?). item(objeto). value(key)
+        renderItem={itemData => <GoalItem title={itemData.item.value} />}
       />
     </View>
   );
