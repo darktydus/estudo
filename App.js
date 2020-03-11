@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import GoalItem from "./components/GoalItem";
-import GoalInput from ".components/GoalInput";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
