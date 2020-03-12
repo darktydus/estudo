@@ -16,7 +16,8 @@ import GoalInput from "./components/GoalInput";
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
 
-  // A ideia aqui é adicionar o atributo retornando uma ID randomica, para facilitar de adicionar ou remover futuramente
+  // A ideia aqui é adicionar o atributo retornando uma ID randomica, para facilitar de adicionar
+  //ou remover futuramente
   const addGoalHandler = goalTitle => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
@@ -24,8 +25,11 @@ export default function App() {
     ]);
   };
 
-  //filter é um método do Javascript que permite retornar uma nova matriz, de acordo com o critério do filtro
-  // A ideia aqui é
+  //filter é um método do Javascript que permite retornar uma nova matriz, de acordo com o critério
+  // do filtro.
+  // A ideia aqui é usar o Filter para filtrar em todos os elementos da Matriz, retornando "TRUE",
+  // para aqueles que são diferentes do ID em que vamos deletar, pois caso seja igual, irá deletar
+  // o que desejamos e o que não desejamos, por isso que tem q ser "diferente".
   const removeGoalHandler = goalId => {
     setCourseGoals(currentGoals => {
       return currentGoals.filter(goal => goal.id !== goalId);
@@ -41,7 +45,8 @@ export default function App() {
         data={courseGoals}
         renderItem={itemData => (
           <GoalItem
-            onDelete={() => console.log("Isso não funcionou?")}
+            id={itemData.item.id} // Aqui foi colocado a localização do id para quando for clicado no "GoalItem" ser deletado
+            onDelete={removeGoalHandler}
             title={itemData.item.value}
           />
         )} //itemData(?). item(objeto). value(key)
