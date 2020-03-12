@@ -1,4 +1,4 @@
-Tutorial justifyContent - https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content 
+Tutorial justifyContent - https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 justifyContent é usado para organizar os elementos no eixo principal
 
 Tutorial flexDirection - https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -21,7 +21,7 @@ Normalmente, variáveis “desaparecem” quando a função sai mas variáveis d
 onChangeText eh conectado há uma função e toda vez que eh acionado ele altera o texto (a constante)
 onPress={addGoalHandler} foi adicionado sem o parenteses para não executar imediatamente onPress={addGoalHandler()}
 
-... = eh chamado operador de propagação, é um recurso de Javascript que pega uma matriz existente extraindo todos 
+... = eh chamado operador de propagação, é um recurso de Javascript que pega uma matriz existente extraindo todos
 elementos do array e, em seguida adicioná-los aqui, podendo adicinar também novos elementos
 
 Keys...
@@ -31,3 +31,15 @@ ScrollView: serve para rolar a página quando os items utrapaçam a linha da tel
 Flatlist permite que apenas renderise os itens que aparece na tela, para não renderizar todos e deixar seu app mais lento.
 Flatlist tem 2 propriedades importantes: uma delas eh a "data" que aponta seus dados de entrada, ou seja uma Matrix.
 "renderItem" é a outra proprierade importante, é o item de renderização que usa a função que é chamada para cada item em seu "data"
+Flatlist tem uma "key" automatica mas de acordo com o curso precisasse fazer um ajuste nos dados, e é necessário
+uma matriz de objetos em que cada objeto tem uma propriedade "key" e uma "value".
+Outra forma de resolver o problema eh usando a "keyExtractor" que pega uma função que diz ao Flatlist como estrair a chave
+keyExtractor usa uma função que leva dois argumentos - o item que está olhando e o "index". Você terá q retornar uma chave e,
+por padrao, ela procuraria por um item.key, então essa é a lógica padrão. Então colocaremos uma "id" prop, para obter o ID como uma chave
+e agora com isso, vc também se livra do "warning" do emulador. Informando ao Flatlist do React Native como obter uma chave única para cada item de sua lista
+
+Props - https://pt-br.reactjs.org/docs/components-and-props.html
+
+TouchableOpacity: Cria uma opacidade quando clica no "button" por exemplo
+
+Modal - https://reactnative.dev/docs/modal
