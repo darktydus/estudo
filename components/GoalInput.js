@@ -11,7 +11,7 @@ const GoalInput = props => {
   //Modal funciona como uma navegação entre telas, mas a outra tela fica invisível pro tras.
   //animationType é a forma em que a nova tela aparecerá
   return (
-    <Modal visible={props.visible} animationType="slide">
+    <Modal visible={props.visible} animationType="slide" animationType="slide">
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Estabelecimento A"
@@ -31,15 +31,17 @@ const GoalInput = props => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flex: 1, // é usado para fracionar o espaçamento entre 2 ou mais(filhos) flex
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center"
   },
   input: {
     width: "80%",
-    borderColor: "black",
+    borderColor: "#000000",
     borderWidth: 2,
-    padding: 10
+    padding: 10,
+    marginBottom: 15 // Distancia a aba do botão em 10.
   }
 });
 
