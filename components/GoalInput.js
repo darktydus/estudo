@@ -8,6 +8,11 @@ const GoalInput = props => {
     setEnteredGoal(enteredText);
   };
 
+  const addGoalHandler = () => {
+    props.onAddGoal(enteredGoal);
+    setEnteredGoal("");
+  };
+
   //Modal funciona como uma navegação entre telas, mas a outra tela fica invisível pro tras.
   //animationType é a forma em que a nova tela aparecerá
   return (
@@ -19,9 +24,10 @@ const GoalInput = props => {
           onChangeText={goalInputHandler}
           value={enteredGoal}
         />
-        <Button title="ADD" onPress={props.onAddGoal.bind(this, enteredGoal)} />
+        <Button title="CANCEL" color="red" />
+        <Button title="ADD" onPress={addGoalHandler} />
       </View>
-    </Modal>
+    </Modal> /* Foi adicionado o addGoalHandler ao botão*/
   );
   /* usaremos o bind e podemos configurar alguns argumentos quando a função for chamada
   sempre o "this" na frente e o segundo sempre serão quando ela é chamada e nesse caso quando
