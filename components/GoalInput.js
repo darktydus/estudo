@@ -16,7 +16,7 @@ const GoalInput = props => {
   //Modal funciona como uma navegação entre telas, mas a outra tela fica invisível pro tras.
   //animationType é a forma em que a nova tela aparecerá
   return (
-    <Modal visible={props.visible} animationType="slide" animationType="slide">
+    <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Estabelecimento A"
@@ -24,8 +24,14 @@ const GoalInput = props => {
           onChangeText={goalInputHandler}
           value={enteredGoal}
         />
-        <Button title="CANCEL" color="red" onPress={props.onCancel} />
-        <Button title="ADD" onPress={addGoalHandler} />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button title="CANCEL" color="red" onPress={props.onCancel} />
+          </View>
+          <View style={styles.button}>
+            <Button title="ADD" onPress={addGoalHandler} />
+          </View>
+        </View>
       </View>
     </Modal> /* Foi adicionado o addGoalHandler ao botão*/
   );
@@ -48,6 +54,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 10,
     marginBottom: 15 // Distancia a aba do botão em 10.
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "60%"
+  },
+  button: {
+    width: "40%"
   }
 });
 
