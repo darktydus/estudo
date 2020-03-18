@@ -33,11 +33,21 @@ export default function App() {
     });
   };
 
+  const cancelGoalAdditionHandler = () => {
+    setIsAddMode(false);
+    /* foi adicionado aqui o caminho do botão Cancel, linkado ao "onCancel"
+     e no props.onCancel no GoalInput.js */
+  };
+
   //onAddGoalHandler recebe uma prop dentro GoalInput, então colocamos no GoalInput props.onAddGoal
   return (
     <View style={styles.screen}>
       <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
-      <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} />
+      <GoalInput
+        visible={isAddMode}
+        onAddGoal={addGoalHandler}
+        onCancel={cancelGoalAdditionHandler}
+      />
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={courseGoals}
